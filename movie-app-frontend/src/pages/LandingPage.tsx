@@ -10,7 +10,6 @@ const LandingPage: React.FC = () => {
     const getMovies = async () => {
       try {
         const data = await fetchAllMovies();
-        console.log("data: ", data);
         setMovies(data);
       } catch (error) {
         console.error("Error fetching movies:", error);

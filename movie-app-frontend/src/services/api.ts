@@ -57,7 +57,6 @@ export const fetchMovies = async () => {
 export const fetchAllMovies = async () => {
   try {
     const response = await api.get(`/movies/get-all`);
-    console.log('response: ', response);
     return response.data;
   } catch (error) {
     throw error;

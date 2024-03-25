@@ -77,7 +77,7 @@ const EditForm: React.FC<EditFormProps> = ({ movie, onUpdate, onClose }) => {
       }
 
       const response = await updateMovie(movie._id, formData);
-      toast.success(response.message);
+      toast.success("Movie updated successfully");
       const updatedMovie: Movie = response;
       onUpdate(updatedMovie);
       onClose();

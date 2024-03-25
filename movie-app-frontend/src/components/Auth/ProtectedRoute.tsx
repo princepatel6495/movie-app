@@ -29,7 +29,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
           setIsAuthenticated(false);
         }
       } else {
-        console.log("elfheiryewiu");
         setIsAuthenticated(false);
       }
     };
