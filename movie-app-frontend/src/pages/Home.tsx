@@ -7,6 +7,7 @@ import AddMovieForm from "../components/AddMovieForm";
 const Home: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [showAddForm, setShowAddForm] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const userId: any = localStorage.getItem("userData");
@@ -22,8 +23,10 @@ const Home: React.FC = () => {
         try {
           const data = await fetchMovies();
           setMovies(data);
+          setLoading(false);
         } catch (error) {
           console.error("Error fetching movies:", error);
+          setLoading(false);
         }
       };
 
@@ -68,7 +71,12 @@ const Home: React.FC = () => {
           onClose={() => setShowAddForm(false)}
         />
       )}
-      {movies.length === 0 ? (
+      {loading ? (
+        <div className="text-center text-gray-600 mt-32">
+          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
+          <p className="text-xl mt-4">Loading...</p>
+        </div>
+      ) : movies.length === 0 ? (
         <div className="text-center text-gray-600 mt-32">
           <p className="text-xl mb-4">No records found</p>
         </div>
