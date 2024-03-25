@@ -72,9 +72,11 @@ const Home: React.FC = () => {
         />
       )}
       {loading ? (
-        <div className="text-center text-gray-600 mt-32">
-          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
-          <p className="text-xl mt-4">Loading...</p>
+        <div className="flex justify-center items-center h-screen">
+          <div className="text-center text-gray-600">
+            <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
+            <p className="text-xl mt-4">Loading...</p>
+          </div>
         </div>
       ) : movies.length === 0 ? (
         <div className="text-center text-gray-600 mt-32">
