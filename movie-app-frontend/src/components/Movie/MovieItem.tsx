@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Movie } from "../../types/types";
-import { FaEdit } from "react-icons/fa";
-import { MdOutlineDeleteOutline } from "react-icons/md";
 import DeleteConfirmation from "../DeleteConfirmation";
 import EditForm from "../EditMovieForm";
 

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { FaEdit } from "react-icons/fa";
-import { MdOutlineDeleteOutline } from "react-icons/md";
 import { Movie } from "../types/types";
 
 interface MovieItemProps {

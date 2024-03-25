@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Movie } from "../types/types";
 import { updateMovie } from "../services/api";
 import { toast } from "react-toastify";
-import { IoMdClose } from "react-icons/io";
 
 interface EditFormProps {
   movie: Movie;
@@ -97,7 +96,20 @@ const EditForm: React.FC<EditFormProps> = ({ movie, onUpdate, onClose }) => {
           <h2 className="text-2xl font-semibold text-gray-800">Edit Movie</h2>
           <div>
             <button onClick={onClose} className="text-gray-500">
-              <IoMdClose className="h-6 w-6" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
         </div>
